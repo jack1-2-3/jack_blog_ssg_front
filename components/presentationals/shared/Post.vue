@@ -62,7 +62,9 @@ export default Vue.extend({
       return (this as any).posts[(this as any).postId]
     },
     content() {
-      return (this as any).$md.render((this as any).post.content)
+      let content = (this as any).$md.render((this as any).post.content)
+      content = content.replaceAll(/<img src="/gi, '<img width="100%" src="http://localhost:1337')
+      return content
     },
   },
 })
