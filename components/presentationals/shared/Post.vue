@@ -51,15 +51,15 @@ export default Vue.extend({
   },
   data() {
     return {
-      postId: (this as any).$route.params.id,
+      postSlug: (this as any).$route.params.slug,
     }
   },
   computed: {
     post() {
-      if(!(this as any).postId) {
+      if(!(this as any).postSlug) {
         return (this as any).posts[0]
       }
-      return (this as any).posts[(this as any).postId]
+      return (this as any).posts.find((post: object) => post.slug === (this as any).postSlug)
     },
     content() {
       let content = (this as any).$md.render((this as any).post.content)

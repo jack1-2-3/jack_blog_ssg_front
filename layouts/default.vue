@@ -52,7 +52,7 @@
         <v-list-item
           v-for="(post, index) in getPosts"
           :key="index"
-          :to="`/${currentCategory}/${index}`"
+          :to="`/${currentCategory}/${post.slug}`"
         >
           <v-list-item-action>
             <v-icon light> mdi-repeat </v-icon>
