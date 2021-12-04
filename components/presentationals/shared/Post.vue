@@ -42,6 +42,10 @@
 <script lang="ts">
 import Vue from 'vue'
 
+type post = {
+  slug: string
+}
+
 export default Vue.extend({
   props: {
     posts: {
@@ -59,7 +63,7 @@ export default Vue.extend({
       if(!(this as any).postSlug) {
         return (this as any).posts[0]
       }
-      return (this as any).posts.find((post: object) => post.slug === (this as any).postSlug)
+      return (this as any).posts.find((post: post) => post.slug === (this as any).postSlug)
     },
     content() {
       let content = (this as any).$md.render((this as any).post.content)
