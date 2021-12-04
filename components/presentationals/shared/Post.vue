@@ -2,6 +2,7 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <v-card>
+        <p v-if="!postSlug" class="latestPost">最近の記事</p>
         <v-card-title class="headline">
           <h1 class="title">{{ post.title }}</h1>
         </v-card-title>
@@ -65,6 +66,11 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.latestPost {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 10px;
+}
 .title {
   text-decoration: underline greenyellow 5px;
 }
