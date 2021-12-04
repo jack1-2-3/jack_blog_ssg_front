@@ -7,28 +7,13 @@
         </v-card-title>
         <v-card-text>
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="content"></div>
+          <div class="content" v-html="content"></div>
           <div class="text-xs-right">
             <em
               ><small>&mdash; {{ post.author }}</small></em
             >
           </div>
           <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
@@ -73,3 +58,11 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.content >>> img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+</style>
