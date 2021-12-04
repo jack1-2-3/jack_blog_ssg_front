@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: 'jack_blog',
-    title: 'jack_blog',
+    titleTemplate: '脳内プログラム',
+    title: '脳内プログラム',
     htmlAttrs: {
       lang: 'ja'
     },
