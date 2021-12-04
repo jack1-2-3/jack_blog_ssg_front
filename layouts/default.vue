@@ -83,13 +83,19 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'TOP',
           to: '/',
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire',
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'きっかけ',
+          to: '/motivator',
+          category: 'motivator',
         },
         {
           icon: 'mdi-application-braces-outline',
@@ -103,9 +109,11 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['currentCategory', 'techPosts']),
+    ...mapGetters(['currentCategory', 'techPosts', 'motivatorPosts']),
     getPosts() {
       switch ((this as any).currentCategory) {
+        case 'motivator':
+          return (this as any).motivatorPosts
         case 'tech':
           return (this as any).techPosts
         default:
