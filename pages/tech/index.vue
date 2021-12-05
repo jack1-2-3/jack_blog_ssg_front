@@ -1,14 +1,14 @@
 <template>
-  <Tech />
+  <Post />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Tech from '@/components/containers/posts/Tech.vue'
+import Post from '@/components/containers/shared/Post.vue'
 
 export default Vue.extend({
   components: {
-    Tech
+    Post
   }
 })
 </script>

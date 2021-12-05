@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Post :posts="techPosts" />
+    <Post :posts="getPosts" />
   </div>
 </template>
 
@@ -15,11 +15,11 @@ export default Vue.extend({
   },
   computed: {
     ...mapGetters([
-      'techPosts'
+      'getPosts'
     ])
   },
   created() {
-    (this as any).fetchPosts('tech')
+    (this as any).fetchPosts()
   },
   methods: {
     ...mapActions([
