@@ -18,7 +18,7 @@ export default Vue.extend({
       'getPosts'
     ])
   },
-  created() {
+  mounted() {
     (this as any).fetchPosts()
   },
   methods: {
