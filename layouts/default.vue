@@ -109,17 +109,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['currentCategory', 'techPosts', 'motivatorPosts']),
-    getPosts() {
-      switch ((this as any).currentCategory) {
-        case 'motivator':
-          return (this as any).motivatorPosts
-        case 'tech':
-          return (this as any).techPosts
-        default:
-          return []
-      }
-    },
+    ...mapGetters(['currentCategory', 'getPosts'])
   },
   methods: {
     ...mapMutations(['updateCategory']),
