@@ -112,7 +112,7 @@ export default {
     ...mapGetters(['currentCategory', 'getPosts'])
   },
   methods: {
-    ...mapMutations(['updateCategory']),
+    ...mapMutations(['updateCategory','initCurrentCategory']),
   },
 }
 </script>

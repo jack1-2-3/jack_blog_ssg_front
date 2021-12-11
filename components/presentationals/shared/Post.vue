@@ -58,7 +58,7 @@ export default Vue.extend({
     },
     content() {
       let content = (this as any).$md.render((this as any).post.content)
-      content = content.replaceAll(/<img src="/gi, '<img src="http://localhost:1337')
+      content = content.replace(/<img src="/gi, '<img src="http://localhost:1337')
       return content
     },
   },
