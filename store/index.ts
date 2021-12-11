@@ -13,16 +13,7 @@ export const getters: GetterTree<RootState, RootState> = {
 }
 
 export const mutations: MutationTree<RootState> = {
-  setPosts: (state, posts) => (state.posts = posts.articles),
+  initCurrentCategory: (state, category) => (state.currentCategory = category),
+  setPosts: (state, posts) => (state.posts = posts),
   updateCategory: (state, category: string) => (state.currentCategory = category)
-}
-
-export const actions: ActionTree<RootState, RootState> = {
-  async fetchPosts({ commit, state }) {
-    if(!state.currentCategory) {
-      return
-    }
-    const posts = await this.$axios.$get(`${process.env.baseURL}/categories/${state.currentCategory}`)
-    commit('setPosts', posts)
-  },
 }
