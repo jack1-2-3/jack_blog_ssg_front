@@ -1,9 +1,20 @@
 import colors from 'vuetify/es5/util/colors'
+import axios from 'axios'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  generate: {
+    async routes() {
+      const articles = await axios.get('http://localhost:1337/articles')
+        .then(res => res.data)
+      return [
+        ...articles.map(article => {
+          return { route: `/${article.category.name}/${article.slug}` }
+        })
+      ]
+    }
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '脳内プログラム',
